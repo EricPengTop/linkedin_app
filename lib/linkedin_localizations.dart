@@ -18,7 +18,9 @@ class LinkedInLocalizations {
       'home': 'home',
       'homeTitle': 'Search for members, positions, companies and other contents',
       'profession': 'profession',
+      'professionTitle': 'Search for positions and companies',
       'connection': 'connection',
+      'connectionTitle': 'Search for members, positions, companies and other contents',
       'message': 'message',
       'my': 'my'
     },
@@ -27,7 +29,9 @@ class LinkedInLocalizations {
       'home': '首页',
       'homeTitle': '搜索会员、职位、公司及其他内容',
       'profession': '职业',
+      'professionTitle': '搜索职位及公司',
       'connection': '人脉',
+      'connectionTitle': '搜索会员、职位、公司及其他内容',
       'message': '消息',
       'my': '我'
     },
@@ -46,6 +50,10 @@ class LinkedInLocalizations {
   String get my => _localizedValues[locale.languageCode]['my'];
 
   String get homeTitle => _localizedValues[locale.languageCode]['homeTitle'];
+
+  String get professionTitle => _localizedValues[locale.languageCode]['professionTitle'];
+
+  String get connectionTitle => _localizedValues[locale.languageCode]['connectionTitle'];
 }
 
 class LinkedInLocalizationsDelegate extends LocalizationsDelegate<LinkedInLocalizations> {
