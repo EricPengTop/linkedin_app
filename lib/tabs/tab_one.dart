@@ -28,11 +28,27 @@ class TabOneWidget extends StatelessWidget {
         .toList();
   }
 
+  void onRefresh() {
+
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
-      itemBuilder: (BuildContext context, int index) => onItemBuilderForIndex(context, index),
-      itemCount: data.length,
+    return new Scaffold(
+      body: new RefreshIndicator(
+          child: new ListView.builder(
+            itemBuilder: (BuildContext context, int index) =>
+                onItemBuilderForIndex(context, index),
+            itemCount: data.length,
+            physics: const AlwaysScrollableScrollPhysics(),
+          ),
+          onRefresh: onRefresh
+      ),
+      floatingActionButton: new FloatingActionButton(
+        child: new Icon(Icons.edit),
+        onPressed: null,
+        backgroundColor: const Color(0xFF0084BF),
+      ),
     );
   }
 }
@@ -271,7 +287,10 @@ class EntryItemWidget extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                           ),
                         ),
-                        new Icon(FontAwesomeIcons.star, size: 17.0,)
+                        new Icon(
+                          FontAwesomeIcons.star,
+                          size: 17.0,
+                        )
                       ],
                       crossAxisAlignment: CrossAxisAlignment.start,
                     ),
@@ -303,9 +322,7 @@ class EntryItemWidget extends StatelessWidget {
           new Row(
             children: <Widget>[
               new CircleAvatar(
-                backgroundImage: new NetworkImage(
-                  entry.headImage
-                ),
+                backgroundImage: new NetworkImage(entry.headImage),
                 radius: 25.0,
               ),
               new Expanded(
