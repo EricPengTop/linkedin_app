@@ -1,43 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'linkedin_localizations.dart';
-import 'tab_five.dart';
-import 'tab_four.dart';
-import 'tab_one.dart';
-import 'tab_three.dart';
-import 'tab_two.dart';
+import 'package:linkedin_app/local/linkedin_localizations.dart';
+import 'package:linkedin_app/tabs/tab_five.dart';
+import 'package:linkedin_app/tabs/tab_four.dart';
+import 'package:linkedin_app/tabs/tab_one.dart';
+import 'package:linkedin_app/tabs/tab_three.dart';
+import 'package:linkedin_app/tabs/tab_two.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
 
-  static const MaterialColor swatchColor = const MaterialColor(
-    _bluePrimaryValue,
-    const <int, Color>{
-      50: const Color(0xFFE3F2FD),
-      100: const Color(0xFFBBDEFB),
-      200: const Color(0xFF90CAF9),
-      300: const Color(0xFF64B5F6),
-      400: const Color(0xFF42A5F5),
-      500: const Color(_bluePrimaryValue),
-      600: const Color(0xFF1E88E5),
-      700: const Color(0xFF1976D2),
-      800: const Color(0xFF1565C0),
-      900: const Color(0xFF0D47A1),
-    },
-  );
   static const int _bluePrimaryValue = 0xFF0084BF;
 
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      onGenerateTitle: (BuildContext context) =>
-      LinkedInLocalizations
-          .of(context)
-          .title,
+      onGenerateTitle: (BuildContext context) => LinkedInLocalizations.of(context).title,
       theme: new ThemeData(
-        primarySwatch: swatchColor,
+        primaryColor: const Color(_bluePrimaryValue)
       ),
       home: new MyTabHomePage(),
       debugShowCheckedModeBanner: false,
