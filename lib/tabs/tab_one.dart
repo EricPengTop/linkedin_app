@@ -271,7 +271,7 @@ class EntryItemWidget extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                           ),
                         ),
-                        new Icon(FontAwesomeIcons.star)
+                        new Icon(FontAwesomeIcons.star, size: 17.0,)
                       ],
                       crossAxisAlignment: CrossAxisAlignment.start,
                     ),
