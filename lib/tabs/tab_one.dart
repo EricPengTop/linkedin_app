@@ -102,7 +102,7 @@ final List<Entry> data = [
           'medium.freecodecamp.org',
           0,
           0),
-      ItemContentType.IMAGE_TEXT_INTRO),
+      ItemContentType.IMAGE_TEXT),
   new Entry(
       'freeCodeCamp',
       '122927位关注者',
@@ -134,7 +134,7 @@ final List<Entry> data = [
           'medium.freecodecamp.org',
           0,
           0),
-      ItemContentType.IMAGE_TEXT_INTRO),
+      ItemContentType.IMAGE),
   new Entry(
       'freeCodeCamp',
       '122927位关注者',
