@@ -7,6 +7,16 @@ class TabOneWidget extends StatelessWidget {
     return EntryItemWidget(entry);
   }
 
+  Widget onItemBuilderForIndex(BuildContext context, int i) {
+    //如果是奇数返回分割线
+    if (i.isOdd) {
+      return new Divider(height: 0.0, color: Colors.grey[500]);
+    }
+    //偶数的话开始构建一行
+    final index = i ~/ 2;
+    return onItemBuilder(context, data[index]);
+  }
+
   Iterable<Widget> onListMap(BuildContext context) {
     return data.map((Entry entry) {
       onItemBuilder(context, entry);
@@ -14,13 +24,15 @@ class TabOneWidget extends StatelessWidget {
   }
 
   List<Widget> divideTiles(BuildContext context) {
-    return ListTile.divideTiles(context: context, tiles: onListMap(context)).toList();
+    return ListTile.divideTiles(context: context, tiles: onListMap(context))
+        .toList();
   }
 
   @override
   Widget build(BuildContext context) {
-    return new ListView(
-      children: divideTiles(context),
+    return new ListView.builder(
+      itemBuilder: (BuildContext context, int index) => onItemBuilderForIndex(context, index),
+      itemCount: data.length,
     );
   }
 }
@@ -59,6 +71,38 @@ class Content {
 }
 
 final List<Entry> data = [
+  new Entry(
+      'freeCodeCamp',
+      '122927位关注者',
+      '2018-08-15 12:00',
+      '',
+      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      200,
+      500,
+      new Content(
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'medium.freecodecamp.org',
+          0,
+          0),
+      ItemContentType.IMAGE_TEXT_INTRO),
+  new Entry(
+      'freeCodeCamp',
+      '122927位关注者',
+      '2018-08-15 12:00',
+      '',
+      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      200,
+      500,
+      new Content(
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'medium.freecodecamp.org',
+          0,
+          0),
+      ItemContentType.IMAGE_TEXT_INTRO),
   new Entry(
       'freeCodeCamp',
       '122927位关注者',
@@ -146,6 +190,7 @@ class EntryItemWidget extends StatelessWidget {
           children: <Widget>[
             new Text(entry.content.intro),
             new Card(
+              elevation: 0.5,
               child: new Column(
                 children: <Widget>[
                   new Image.network(entry.content.url),
@@ -193,8 +238,12 @@ class EntryItemWidget extends StatelessWidget {
         children: <Widget>[
           new Row(
             children: <Widget>[
-              Image.network(entry.headImage,
-                  width: 60.0, height: 60.0, fit: BoxFit.cover),
+              new CircleAvatar(
+                backgroundImage: new NetworkImage(
+                  entry.headImage
+                ),
+                radius: 25.0,
+              ),
               new Expanded(
                 child: new Padding(
                   padding: const EdgeInsets.only(left: 5.0),
