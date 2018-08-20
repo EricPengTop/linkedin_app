@@ -134,6 +134,70 @@ final List<Entry> data = [
           'medium.freecodecamp.org',
           0,
           0),
+      ItemContentType.IMAGE_TEXT_INTRO),
+  new Entry(
+      'freeCodeCamp',
+      '122927位关注者',
+      '2018-08-15 12:00',
+      '',
+      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      200,
+      500,
+      new Content(
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'medium.freecodecamp.org',
+          0,
+          0),
+      ItemContentType.IMAGE_TEXT_INTRO),
+  new Entry(
+      'freeCodeCamp',
+      '122927位关注者',
+      '2018-08-15 12:00',
+      '',
+      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      200,
+      500,
+      new Content(
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'medium.freecodecamp.org',
+          0,
+          0),
+      ItemContentType.IMAGE_TEXT_INTRO),
+  new Entry(
+      'freeCodeCamp',
+      '122927位关注者',
+      '2018-08-15 12:00',
+      '',
+      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      200,
+      500,
+      new Content(
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'medium.freecodecamp.org',
+          0,
+          0),
+      ItemContentType.IMAGE_TEXT_INTRO),
+  new Entry(
+      'freeCodeCamp',
+      '122927位关注者',
+      '2018-08-15 12:00',
+      '',
+      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      200,
+      500,
+      new Content(
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'Do not settle: how you can match your JavaScript collection to your goals.',
+          'medium.freecodecamp.org',
+          0,
+          0),
       ItemContentType.IMAGE_TEXT_INTRO)
 ];
 
@@ -277,7 +341,7 @@ class EntryItemWidget extends StatelessWidget {
                     LinkedInAppIcons.thumbs_up, entry.likeCount.toString())
               ],
             ),
-          )
+          ),
         ],
       ),
     );
