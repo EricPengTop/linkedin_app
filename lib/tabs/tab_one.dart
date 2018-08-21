@@ -13,7 +13,7 @@ class TabOneWidget extends StatelessWidget {
   Widget onItemBuilderForIndex(BuildContext context, int i) {
     //如果是奇数返回分割线
     if (i.isOdd) {
-      return new Divider(height: 0.0, color: Colors.grey[500]);
+      return new Divider(height: 10.0, color: const Color(0x00000000));
     }
     //偶数的话开始构建一行
     final index = i ~/ 2;
@@ -52,6 +52,7 @@ class TabOneWidget extends StatelessWidget {
           ),
           onRefresh: _handleRefresh
       ),
+      backgroundColor: Colors.grey[100],
       floatingActionButton: new FloatingActionButton(
         child: new Icon(Icons.edit),
         onPressed: () {
@@ -266,7 +267,13 @@ class EntryItemWidget extends StatelessWidget {
         margin: const EdgeInsets.only(top: 5.0),
         child: new Column(
           children: <Widget>[
-            new Text(entry.content.intro),
+            new Text(
+              entry.content.intro,
+              style: new TextStyle(
+                color: Colors.black87,
+                fontSize: 16.0
+              ),
+            ),
             new Image.network(entry.content.url)
           ],
         ),
@@ -278,7 +285,13 @@ class EntryItemWidget extends StatelessWidget {
         margin: const EdgeInsets.only(top: 5.0),
         child: new Column(
           children: <Widget>[
-            new Text(entry.content.intro),
+            new Text(
+              entry.content.intro,
+              style: new TextStyle(
+                color: Colors.black87,
+                fontSize: 16.0
+              )
+            ),
             new Card(
               elevation: 0.5,
               child: new Column(
@@ -291,8 +304,20 @@ class EntryItemWidget extends StatelessWidget {
                         new Expanded(
                           child: new Column(
                             children: <Widget>[
-                              new Text(entry.content.title),
-                              new Text(entry.content.childTitle)
+                              new Text(
+                                entry.content.title,
+                                style: new TextStyle(
+                                  color: Colors.black87,
+                                  fontSize: 16.0
+                                )
+                              ),
+                              new Text(
+                                entry.content.childTitle,
+                                style: new TextStyle(
+                                  color: Colors.grey[400],
+                                  fontSize: 14.0
+                                ),
+                              )
                             ],
                             crossAxisAlignment: CrossAxisAlignment.start,
                           ),
@@ -345,9 +370,27 @@ class EntryItemWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 5.0),
                   child: new Column(
                     children: <Widget>[
-                      new Text(entry.title),
-                      new Text(entry.title),
-                      new Text(entry.title),
+                      new Text(
+                        entry.title,
+                        style: new TextStyle(
+                          color: Colors.black87,
+                          fontSize: 16.0
+                        ),
+                      ),
+                      new Text(
+                        entry.childTitle,
+                        style: new TextStyle(
+                          color: Colors.grey[400],
+                          fontSize: 14.0
+                        ),
+                      ),
+                      new Text(
+                        entry.time,
+                        style: new TextStyle(
+                          color: Colors.grey[400],
+                          fontSize: 14.0
+                        )
+                      ),
                     ],
                     crossAxisAlignment: CrossAxisAlignment.start,
                   ),
