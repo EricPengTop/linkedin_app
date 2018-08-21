@@ -11,16 +11,14 @@ import 'package:linkedin_app/tabs/tab_two.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-
   static const int _bluePrimaryValue = 0xFF0084BF;
 
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      onGenerateTitle: (BuildContext context) => LinkedInLocalizations.of(context).title,
-      theme: new ThemeData(
-        primaryColor: const Color(_bluePrimaryValue)
-      ),
+      onGenerateTitle: (BuildContext context) =>
+          LinkedInLocalizations.of(context).title,
+      theme: new ThemeData(primaryColor: const Color(_bluePrimaryValue)),
       home: new MyTabHomePage(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: [
@@ -55,55 +53,54 @@ class _TabHomePageState extends State<MyTabHomePage> {
   bool showAppBar = true; //默认显示appbar
   String searchTitle = ""; //搜索标题默认为空
 
-  TextStyle bottomNavBarItemTextStyle = new TextStyle(
-      fontSize: 16.0
-  );
+  TextStyle bottomNavBarItemTextStyle = new TextStyle(fontSize: 16.0);
 
   List<BottomNavigationBarItem> getBottomNavBarItemList(BuildContext context) {
     return [
       new BottomNavigationBarItem(
           icon: Image.asset('images/home.png', width: 25.0, height: 25.0),
           title: new Text(
-            LinkedInLocalizations
-                .of(context)
-                .home,
+            LinkedInLocalizations.of(context).home,
             style: bottomNavBarItemTextStyle,
           ),
           activeIcon:
-          Image.asset('images/home_clicked.png', width: 25.0, height: 25.0),
+              Image.asset('images/home_clicked.png', width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
           icon: Image.asset('images/profession.png', width: 25.0, height: 25.0),
-          title: new Text(LinkedInLocalizations
-              .of(context)
-              .profession,
-            style: bottomNavBarItemTextStyle,),
+          title: new Text(
+            LinkedInLocalizations.of(context).profession,
+            style: bottomNavBarItemTextStyle,
+          ),
           activeIcon: Image.asset('images/profession_clicked.png',
               width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
           icon: Image.asset('images/connection.png', width: 25.0, height: 25.0),
-          title: new Text(LinkedInLocalizations
-              .of(context)
-              .connection, style: bottomNavBarItemTextStyle,),
+          title: new Text(
+            LinkedInLocalizations.of(context).connection,
+            style: bottomNavBarItemTextStyle,
+          ),
           activeIcon: Image.asset('images/connection_clicked.png',
               width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
           icon: Image.asset('images/message.png', width: 25.0, height: 25.0),
-          title: new Text(LinkedInLocalizations
-              .of(context)
-              .message, style: bottomNavBarItemTextStyle,),
+          title: new Text(
+            LinkedInLocalizations.of(context).message,
+            style: bottomNavBarItemTextStyle,
+          ),
           activeIcon: Image.asset('images/message_clicked.png',
               width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
           icon: Image.asset('images/my.png', width: 25.0, height: 25.0),
-          title: new Text(LinkedInLocalizations
-              .of(context)
-              .my, style: bottomNavBarItemTextStyle,),
+          title: new Text(
+            LinkedInLocalizations.of(context).my,
+            style: bottomNavBarItemTextStyle,
+          ),
           activeIcon:
-          Image.asset('images/my_clicked.png', width: 25.0, height: 25.0),
+              Image.asset('images/my_clicked.png', width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor)
     ];
   }
@@ -115,27 +112,21 @@ class _TabHomePageState extends State<MyTabHomePage> {
     switch (this.currentIndex) {
       case TAB_ONE:
         setState(() {
-          this.searchTitle = LinkedInLocalizations
-              .of(context)
-              .homeTitle;
+          this.searchTitle = LinkedInLocalizations.of(context).homeTitle;
           this.showAppBar = true;
           this.showAction = false;
         });
         break;
       case TAB_TWO:
         setState(() {
-          this.searchTitle = LinkedInLocalizations
-              .of(context)
-              .professionTitle;
+          this.searchTitle = LinkedInLocalizations.of(context).professionTitle;
           this.showAppBar = true;
           this.showAction = false;
         });
         break;
       case TAB_THREE:
         setState(() {
-          this.searchTitle = LinkedInLocalizations
-              .of(context)
-              .connectionTitle;
+          this.searchTitle = LinkedInLocalizations.of(context).connectionTitle;
           this.showAction = true;
           this.showAppBar = true;
         });
@@ -180,22 +171,25 @@ class _TabHomePageState extends State<MyTabHomePage> {
 
     Widget appBar = new AppBar(
       title: new Text(
-        searchTitle.length > 0 ? searchTitle : LinkedInLocalizations
-            .of(context)
-            .homeTitle,
-        style: new TextStyle(
-            fontSize: 16.0
-        ),
+        searchTitle.length > 0
+            ? searchTitle
+            : LinkedInLocalizations.of(context).homeTitle,
+        style: new TextStyle(fontSize: 16.0),
       ),
       titleSpacing: 0.0,
       leading: new Icon(Icons.search),
       actions: <Widget>[
-        showAction ? new IconButton(
-            icon: Image.asset('images/contact_people.png', width: 25.0, height: 25.0,),
-            onPressed: null
-        ) : new Text('')
+        showAction
+            ? new IconButton(
+                icon: Image.asset(
+                  'images/contact_people.png',
+                  width: 25.0,
+                  height: 25.0,
+                ),
+                onPressed: null)
+            : new Text('')
       ],
-      elevation: 1.0,//底部投影
+      elevation: 1.0, //底部投影
     );
 
     return new Scaffold(

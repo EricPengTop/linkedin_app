@@ -24,7 +24,8 @@ class TabOneWidget extends StatelessWidget {
   }
 
   List<Widget> divideTiles(BuildContext context) {
-    return ListTile.divideTiles(context: context, tiles: onListMap(context))
+    return ListTile
+        .divideTiles(context: context, tiles: onListMap(context))
         .toList();
   }
 
@@ -38,10 +39,7 @@ class TabOneWidget extends StatelessWidget {
             itemCount: data.length,
             physics: const AlwaysScrollableScrollPhysics(),
           ),
-          onRefresh: () {
-
-          }
-      ),
+          onRefresh: () {}),
       floatingActionButton: new FloatingActionButton(
         child: new Icon(Icons.edit),
         onPressed: null,
