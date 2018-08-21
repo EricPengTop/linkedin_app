@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:linkedin_app/util/icons.dart';
 
 class TabOneWidget extends StatelessWidget {
+
   Widget onItemBuilder(BuildContext context, Entry entry) {
     return EntryItemWidget(entry);
   }
@@ -29,6 +32,11 @@ class TabOneWidget extends StatelessWidget {
         .toList();
   }
 
+  Future<Null> _handleRefresh() async {
+    await new Future.delayed(new Duration(seconds: 3));
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -38,11 +46,17 @@ class TabOneWidget extends StatelessWidget {
                 onItemBuilderForIndex(context, index),
             itemCount: data.length,
             physics: const AlwaysScrollableScrollPhysics(),
+            shrinkWrap: true,
+            //reverse: true,
+            controller: null,
           ),
-          onRefresh: () {}),
+          onRefresh: _handleRefresh
+      ),
       floatingActionButton: new FloatingActionButton(
         child: new Icon(Icons.edit),
-        onPressed: null,
+        onPressed: () {
+          
+        },
         backgroundColor: const Color(0xFF0084BF),
       ),
     );
@@ -88,12 +102,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -104,12 +118,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -120,12 +134,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -136,12 +150,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -152,12 +166,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -168,12 +182,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -184,12 +198,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -200,12 +214,12 @@ final List<Entry> data = [
       '122927位关注者',
       '2018-08-15 12:00',
       '',
-      'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+      'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
       200,
       500,
       new Content(
           'Do not settle: how you can match your JavaScript collection to your goals.',
-          'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
+          'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
           'Do not settle: how you can match your JavaScript collection to your goals.',
           'medium.freecodecamp.org',
           0,
@@ -300,14 +314,19 @@ class EntryItemWidget extends StatelessWidget {
     }
 
     Widget buildContent() {
+      Widget result;
       switch (entry.type) {
         case ItemContentType.IMAGE:
-          return buildImageContent();
+          result = buildImageContent();
+          break;
         case ItemContentType.IMAGE_TEXT:
-          return buildImageTextContent();
+          result = buildImageTextContent();
+          break;
         case ItemContentType.IMAGE_TEXT_INTRO:
-          return buildImageTextIntroContent();
+          result = buildImageTextIntroContent();
+          break;
       }
+      return result;
     }
 
     return new Container(

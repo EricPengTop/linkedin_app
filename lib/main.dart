@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      onGenerateTitle: (BuildContext context) => LinkedInLocalizations.of(context).title,
+      onGenerateTitle: (BuildContext context) =>
+          LinkedInLocalizations.of(context).title,
       theme: new ThemeData(primaryColor: const Color(_bluePrimaryValue)),
       home: new MyTabHomePage(),
       debugShowCheckedModeBanner: false,
@@ -57,49 +58,45 @@ class _TabHomePageState extends State<MyTabHomePage> {
   List<BottomNavigationBarItem> getBottomNavBarItemList(BuildContext context) {
     return [
       new BottomNavigationBarItem(
-          icon: Image.asset('images/home.png', width: 25.0, height: 25.0),
+          icon: this.currentIndex == TAB_ONE
+              ? Image.asset('images/home_clicked.png',
+                  width: 25.0, height: 25.0)
+              : Image.asset('images/home.png', width: 25.0, height: 25.0),
           title: new Text(
             LinkedInLocalizations.of(context).home,
             style: bottomNavBarItemTextStyle,
           ),
-          activeIcon:
-              Image.asset('images/home_clicked.png', width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
-          icon: Image.asset('images/profession.png', width: 25.0, height: 25.0),
+          icon: this.currentIndex == TAB_TWO
+              ? Image.asset('images/profession_clicked.png',
+                  width: 25.0, height: 25.0)
+              : Image.asset('images/profession.png', width: 25.0, height: 25.0),
           title: new Text(
             LinkedInLocalizations.of(context).profession,
             style: bottomNavBarItemTextStyle,
           ),
-          activeIcon: Image.asset('images/profession_clicked.png',
-              width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
-          icon: Image.asset('images/connection.png', width: 25.0, height: 25.0),
+          icon: this.currentIndex == TAB_THREE ? Image.asset('images/connection_clicked.png', width: 25.0, height: 25.0) : Image.asset('images/connection.png', width: 25.0, height: 25.0),
           title: new Text(
             LinkedInLocalizations.of(context).connection,
             style: bottomNavBarItemTextStyle,
           ),
-          activeIcon: Image.asset('images/connection_clicked.png',
-              width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
-          icon: Image.asset('images/message.png', width: 25.0, height: 25.0),
+          icon: this.currentIndex == TAB_FOUR ? Image.asset('images/message_clicked.png', width: 25.0, height: 25.0) : Image.asset('images/message.png', width: 25.0, height: 25.0),
           title: new Text(
             LinkedInLocalizations.of(context).message,
             style: bottomNavBarItemTextStyle,
           ),
-          activeIcon: Image.asset('images/message_clicked.png',
-              width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor),
       new BottomNavigationBarItem(
-          icon: Image.asset('images/my.png', width: 25.0, height: 25.0),
+          icon: this.currentIndex == TAB_FIVE ? Image.asset('images/my_clicked.png', width: 25.0, height: 25.0) : Image.asset('images/my.png', width: 25.0, height: 25.0),
           title: new Text(
             LinkedInLocalizations.of(context).my,
             style: bottomNavBarItemTextStyle,
           ),
-          activeIcon:
-              Image.asset('images/my_clicked.png', width: 25.0, height: 25.0),
           backgroundColor: _bottomNavBarItemBackgroundColor)
     ];
   }
