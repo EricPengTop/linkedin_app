@@ -1,2 +1,2 @@
 # linkedin_app
-LinkedIn application for Flutter development.
+使用Flutter开发的LinkedIn应用实例，用于加深对Flutter框架的学习理解。
