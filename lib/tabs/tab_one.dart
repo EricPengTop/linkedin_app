@@ -28,10 +28,6 @@ class TabOneWidget extends StatelessWidget {
         .toList();
   }
 
-  void onRefresh() {
-
-  }
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -42,7 +38,9 @@ class TabOneWidget extends StatelessWidget {
             itemCount: data.length,
             physics: const AlwaysScrollableScrollPhysics(),
           ),
-          onRefresh: onRefresh
+          onRefresh: () {
+
+          }
       ),
       floatingActionButton: new FloatingActionButton(
         child: new Icon(Icons.edit),
