@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      onGenerateTitle: (BuildContext context) =>
-          LinkedInLocalizations.of(context).title,
+      onGenerateTitle: (BuildContext context) => LinkedInLocalizations.of(context).title,
       theme: new ThemeData(primaryColor: const Color(_bluePrimaryValue)),
       home: new MyTabHomePage(),
       debugShowCheckedModeBanner: false,
