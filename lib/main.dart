@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:linkedin_app/local/linkedin_localizations.dart';
+import 'package:linkedin_app/search.dart';
 import 'package:linkedin_app/tabs/tab_five.dart';
 import 'package:linkedin_app/tabs/tab_four.dart';
 import 'package:linkedin_app/tabs/tab_one.dart';
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
         const Locale('en', ''),
         const Locale('zh', ''),
       ],
+      routes: {
+        '/search': (BuildContext context) => new SearchWidget(),
+      },
     );
   }
 }
@@ -170,23 +174,28 @@ class _TabHomePageState extends State<MyTabHomePage> {
     List<BottomNavigationBarItem> items = getBottomNavBarItemList(context);
 
     Widget appBar = new AppBar(
-      title: new Text(
-        searchTitle.length > 0
-            ? searchTitle
-            : LinkedInLocalizations.of(context).homeTitle,
-        style: new TextStyle(fontSize: 16.0),
+      title: new GestureDetector(
+        child: new Text(
+          searchTitle.length > 0
+              ? searchTitle
+              : LinkedInLocalizations.of(context).homeTitle,
+          style: new TextStyle(fontSize: 16.0),
+        ),
+        onTap: () {
+          Navigator.pushNamed(context, '/search');
+        },
       ),
       titleSpacing: 0.0,
       leading: new Icon(Icons.search),
       actions: <Widget>[
         showAction
             ? new IconButton(
-                icon: Image.asset(
-                  'images/contact_people.png',
-                  width: 25.0,
-                  height: 25.0,
-                ),
-                onPressed: null)
+            icon: Image.asset(
+              'images/contact_people.png',
+              width: 25.0,
+              height: 25.0,
+            ),
+            onPressed: null)
             : new Text('')
       ],
       elevation: 1.0, //底部投影

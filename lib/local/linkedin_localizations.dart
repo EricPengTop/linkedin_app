@@ -33,7 +33,12 @@ class LinkedInLocalizations {
       'connection': '人脉',
       'connectionTitle': '搜索会员、职位、公司及其他内容',
       'message': '消息',
-      'my': '我'
+      'my': '我',
+      'jobDiscovery': '职位发现',
+      'workExperience': '工作体会',
+      'searchHint': '搜索关键字',
+      'jobCommand': '职位推荐',
+      'screen': '筛选'
     },
   };
 
@@ -54,6 +59,16 @@ class LinkedInLocalizations {
   String get professionTitle => _localizedValues[locale.languageCode]['professionTitle'];
 
   String get connectionTitle => _localizedValues[locale.languageCode]['connectionTitle'];
+
+  String get jobDiscovery => _localizedValues[locale.languageCode]['jobDiscovery'];
+
+  String get workExperience => _localizedValues[locale.languageCode]['workExperience'];
+
+  String get searchHint => _localizedValues[locale.languageCode]['searchHint'];
+
+  String get jobCommand => _localizedValues[locale.languageCode]['jobCommand'];
+
+  String get screen => _localizedValues[locale.languageCode]['screen'];
 }
 
 class LinkedInLocalizationsDelegate extends LocalizationsDelegate<LinkedInLocalizations> {
