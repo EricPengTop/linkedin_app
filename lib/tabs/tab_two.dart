@@ -9,8 +9,12 @@ class TabTwoWidget extends StatefulWidget {
   }
 }
 
-class _TabTwoWidgetState extends State<TabTwoWidget> with SingleTickerProviderStateMixin {
-  static List<Widget> tabs = [new JobDiscoveryWidget(), new WorkExperienceWidget()]; //tab个数
+class _TabTwoWidgetState extends State<TabTwoWidget>
+    with SingleTickerProviderStateMixin {
+  static List<Widget> tabs = [
+    new JobDiscoveryWidget(),
+    new WorkExperienceWidget()
+  ]; //tab个数
 
   @override
   void initState() {
@@ -35,10 +39,12 @@ class _TabTwoWidgetState extends State<TabTwoWidget> with SingleTickerProviderSt
                 key: new PageStorageKey<Type>(TabBar),
                 tabs: <Widget>[
                   new Tab(text: LinkedInLocalizations.of(context).jobDiscovery),
-                  new Tab(text: LinkedInLocalizations.of(context).workExperience),
+                  new Tab(
+                      text: LinkedInLocalizations.of(context).workExperience),
                 ],
                 labelColor: Colors.black87,
-                labelStyle: new TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+                labelStyle:
+                    new TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
               ),
             ),
             new Expanded(
@@ -53,7 +59,6 @@ class _TabTwoWidgetState extends State<TabTwoWidget> with SingleTickerProviderSt
 }
 
 class JobDiscoveryWidget extends StatefulWidget {
-
   JobDiscoveryWidget({Key key}) : super(key: key);
 
   @override
@@ -62,14 +67,24 @@ class JobDiscoveryWidget extends StatefulWidget {
   }
 }
 
-class _JobDiscoveryWidgetState extends State<JobDiscoveryWidget> with SingleTickerProviderStateMixin {
-
+class _JobDiscoveryWidgetState extends State<JobDiscoveryWidget>
+    with SingleTickerProviderStateMixin {
   static const List<Banner> bannerList = const <Banner>[
-    const Banner(title: '一键打开求职状态，老板不见猎头见', image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
-    const Banner(title: '一键打开求职状态，老板不见猎头见', image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
-    const Banner(title: '一键打开求职状态，老板不见猎头见', image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
-    const Banner(title: '一键打开求职状态，老板不见猎头见', image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
-    const Banner(title: '一键打开求职状态，老板不见猎头见', image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
+    const Banner(
+        title: '一键打开求职状态，老板不见猎头见',
+        image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
+    const Banner(
+        title: '一键打开求职状态，老板不见猎头见',
+        image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
+    const Banner(
+        title: '一键打开求职状态，老板不见猎头见',
+        image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
+    const Banner(
+        title: '一键打开求职状态，老板不见猎头见',
+        image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
+    const Banner(
+        title: '一键打开求职状态，老板不见猎头见',
+        image: 'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png'),
   ];
 
   TabController _tabController;
@@ -80,7 +95,8 @@ class _JobDiscoveryWidgetState extends State<JobDiscoveryWidget> with SingleTick
       _tabController.index = 0;
       _tabController.animateTo(_tabController.index);
     } else if (!_tabController.indexIsChanging) {
-      int index = (_tabController.index + delta).clamp(0, bannerList.length - 1);
+      int index =
+          (_tabController.index + delta).clamp(0, bannerList.length - 1);
       _tabController.animateTo(index);
     }
   }
@@ -108,7 +124,6 @@ class _JobDiscoveryWidgetState extends State<JobDiscoveryWidget> with SingleTick
 
   @override
   Widget build(BuildContext context) {
-
     Widget bannerWidget = new Container(
       height: 220.0,
       child: new Stack(
@@ -149,7 +164,8 @@ class _JobDiscoveryWidgetState extends State<JobDiscoveryWidget> with SingleTick
               new IconButton(
                 padding: new EdgeInsets.all(0.0),
                 icon: new Icon(Icons.menu),
-                onPressed: () {//TODO 筛选页面跳转
+                onPressed: () {
+                  //TODO 筛选页面跳转
                 },
                 tooltip: LinkedInLocalizations.of(context).screen,
               )
@@ -167,42 +183,73 @@ class _JobDiscoveryWidgetState extends State<JobDiscoveryWidget> with SingleTick
             bannerWidget,
             menuTitleWidget,
             buildRow(context, 0),
+            buildRow(context, 1),
+            buildRow(context, 2),
+            buildRow(context, 3),
+            buildRow(context, 4),
+            buildRow(context, 5)
           ],
         ),
-        onRefresh: () {
-
-        },
+        onRefresh: _handleRefresh,
       ),
     );
   }
 
   Widget buildRow(BuildContext context, int index) {
-    return new Container(
-      color: Colors.white,
-      padding: const EdgeInsets.all(10.0),
-      child: new Row(
-        children: <Widget>[
-          new Image.network('http://cruxcrush.com/wp-content/uploads/2015/12/nine.png', height: 50.0, width: 50.0, fit: BoxFit.cover),
-          new Padding(
-            padding: const EdgeInsets.only(left: 10.0),
-            child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                new Text('aaa', style: new TextStyle(color: Colors.black)),
-                new Text('aaa', style: new TextStyle(color: Colors.black)),
-                new Row(
+    return new Column(
+      children: <Widget>[
+        new Container(
+          color: Colors.white,
+          padding: const EdgeInsets.all(10.0),
+          child: new Row(
+            children: <Widget>[
+              new Image.network(
+                  'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
+                  height: 50.0,
+                  width: 50.0,
+                  fit: BoxFit.cover),
+              new Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    new Image.network('http://cruxcrush.com/wp-content/uploads/2015/12/nine.png', height: 20.0, width: 20.0, fit: BoxFit.cover),
-                    new Text('aaa', style: new TextStyle(color: Colors.black))
+                    new Text('Application Developer',
+                        style: new TextStyle(color: Colors.black)),
+                    new Text('哈曼国际.中国 四川 成都',
+                        style: new TextStyle(color: Colors.black)),
+                    new Container(
+                        margin: const EdgeInsets.only(top: 5.0),
+                        child: new Row(
+                          children: <Widget>[
+                            new Image.network(
+                                'http://cruxcrush.com/wp-content/uploads/2015/12/nine.png',
+                                height: 20.0,
+                                width: 20.0,
+                                fit: BoxFit.cover),
+                            new Text('该公司有4位员工是您的校友',
+                                style: new TextStyle(color: Colors.black))
+                          ],
+                        )
+                    ),
                   ],
                 ),
-              ],
-            ),
-          )
-        ],
-      ),
+              )
+            ],
+          ),
+        ),
+        new Divider(
+          color: Colors.grey[400],
+          height: 0.0,
+          indent: 70.0,
+        )
+      ],
     );
   }
+}
+
+Future<Null> _handleRefresh() async {
+  await Future.delayed(new Duration(seconds: 3));
+  return null;
 }
 
 class Banner {
@@ -213,7 +260,6 @@ class Banner {
 }
 
 class BannerCardWidget extends StatelessWidget {
-
   BannerCardWidget({this.banner});
 
   final Banner banner;
@@ -230,9 +276,7 @@ class BannerCardWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: 10.0),
           child: new Text(
             banner.title,
-            style: new TextStyle(
-              color: Colors.white
-            ),
+            style: new TextStyle(color: Colors.white),
           ),
         )
       ],
@@ -245,6 +289,6 @@ class WorkExperienceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Container(color: Colors.red);
+    return new Container(color: Colors.white);
   }
 }
