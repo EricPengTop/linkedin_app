@@ -22,7 +22,12 @@ class LinkedInLocalizations {
       'connection': 'connection',
       'connectionTitle': 'Search for members, positions, companies and other contents',
       'message': 'message',
-      'my': 'my'
+      'my': 'my',
+      'jobDiscovery': 'Job discovery',
+      'workExperience': 'Work experience',
+      'searchHint': 'Search keywords',
+      'jobCommand': 'Job recommendation',
+      'screen': 'screen'
     },
     'zh': {
       'title': 'LinkedIn Flutter 演示',
