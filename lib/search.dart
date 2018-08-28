@@ -26,7 +26,7 @@ class SearchWidget extends StatelessWidget {
       ),
       body: new Center(
         child: new FlatButton(
-          child: new Text('POP'),
+          child: new Text('返回'),
           onPressed: () {
             Navigator.pop(context);
           },
