@@ -88,30 +88,36 @@ class TabThreeWidgetState extends State<TabThreeWidget> {
       ),
       body: new GridView.count(
           crossAxisCount: 2,
-          childAspectRatio: 1.5,
+          childAspectRatio: 1.0,
           children: new List.generate(mPeopleList.length, (index) {
             return new Card(
               child: new Stack(
-                alignment: AlignmentDirectional.topCenter,
+                alignment: Alignment.center,
                 children: <Widget>[
                   new Container(
                     child: new Icon(Icons.close),
                     alignment: Alignment.topRight,
+                    padding: const EdgeInsets.all(5.0),
                   ),
-                  new Column(
-                    children: <Widget>[
-                      new CircleAvatar(
-                        child: new Image.network(mPeopleList[index].image,
-                            width: 120.0, height: 120.0),
-                        backgroundColor: const Color(0x00000000),
-                      ),
-                      new Text(mPeopleList[index].chineseName),
-                      new Text(mPeopleList[index].birthPlace),
-                      new RaisedButton(
-                        onPressed: null,
-                        child: new Text('加为好友'),
-                      )
-                    ],
+                  new Container(
+                    alignment: Alignment.center,
+                    child: new Column(
+                      children: <Widget>[
+                        new CircleAvatar(
+                          backgroundImage: new NetworkImage(
+                              mPeopleList[index].image
+                          ),
+                          backgroundColor: const Color(0x00000000),
+                          radius: 35.0,
+                        ),
+                        new Text(mPeopleList[index].chineseName),
+                        new Text('${mPeopleList[index].birthPlace}.${mPeopleList[index].occupational}'),
+                        new RaisedButton(
+                          onPressed: null,
+                          child: new Text('加为好友'),
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -131,7 +137,7 @@ class TabThreeWidgetState extends State<TabThreeWidget> {
       if (response.statusCode == HttpStatus.OK) {
         var json = await response.transform(UTF8.decoder).join();
         var data = await JSON.decode(json);
-        List<dynamic> dataList = data['data'];
+        List<dynamic> dataList = await data['data'];
         for (int index = 0; index < dataList.length; index++) {
           var people = new People.fromJson(dataList[index]);
           result.add(people);
