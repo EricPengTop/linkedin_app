@@ -141,8 +141,8 @@ class TabThreeWidgetState extends State<TabThreeWidget> {
       var request = await httpClient.getUrl(Uri.parse(url));
       var response = await request.close();
       if (response.statusCode == HttpStatus.OK) {
-        var json = await response.transform(UTF8.decoder).join();
-        var data = await JSON.decode(json);
+        var json = await response.transform(utf8.decoder).join();
+        var data = await jsonDecode(json);
         List<dynamic> dataList = await data['data'];
         for (int index = 0; index < dataList.length; index++) {
           var people = new People.fromJson(dataList[index]);
