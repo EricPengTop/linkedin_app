@@ -29,14 +29,17 @@ class People {
   final String birthPlace;
   final String occupational;
 
-  People.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        chineseName = json['chineseName'],
-        image = json['image'],
-        englishName = json['englishName'],
-        birthday = json['birthday'],
-        birthPlace = json['birthPlace'],
-        occupational = json['occupational'];
+  factory People.fromJson(Map<String, dynamic> json) {
+    return new People(
+        id : json['id'],
+        chineseName : json['chineseName'],
+        image : json['image'],
+        englishName : json['englishName'],
+        birthday : json['birthday'],
+        birthPlace : json['birthPlace'],
+        occupational : json['occupational']
+    );
+  }
 }
 
 class TabThreeWidgetState extends State<TabThreeWidget> {
