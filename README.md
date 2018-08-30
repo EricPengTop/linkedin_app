@@ -3,7 +3,7 @@
 
 # 效果展示
 # Android端
-![Image text](https://github.com/EricPengTop/linkedin_app/blob/master/screen_images/Screenshot_2018-08-23-10-26-40-516_com.pt.linkedi.png)
+![Image text](https://github.com/EricPengTop/linkedin_app/blob/master/screen_images/1.png)
 
 # iOS端
-![Image text](https://github.com/EricPengTop/linkedin_app/blob/master/screen_images/WX20180828-175427%402x.png)
+![Image text](https://github.com/EricPengTop/linkedin_app/blob/master/screen_images/2.png)
