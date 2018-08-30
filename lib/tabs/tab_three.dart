@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:convert';
 import 'dart:io';
+import 'package:linkedin_app/local/linkedin_localizations.dart';
 
 class TabThreeWidget extends StatefulWidget {
   @override
@@ -113,8 +114,10 @@ class TabThreeWidgetState extends State<TabThreeWidget> {
                         new Text(mPeopleList[index].chineseName),
                         new Text('${mPeopleList[index].birthPlace}.${mPeopleList[index].occupational}'),
                         new RaisedButton(
-                          onPressed: null,
-                          child: new Text('加为好友'),
+                          onPressed: () {
+
+                          },
+                          child: new Text(LinkedInLocalizations.of(context).addFriends),
                         )
                       ],
                     ),

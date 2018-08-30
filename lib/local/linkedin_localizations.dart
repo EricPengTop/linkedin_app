@@ -27,7 +27,8 @@ class LinkedInLocalizations {
       'workExperience': 'Work experience',
       'searchHint': 'Search keywords',
       'jobCommand': 'Job recommendation',
-      'screen': 'screen'
+      'screen': 'screen',
+      'addFriends': 'add as friends'
     },
     'zh': {
       'title': 'LinkedIn Flutter 演示',
@@ -43,7 +44,8 @@ class LinkedInLocalizations {
       'workExperience': '工作体会',
       'searchHint': '搜索关键字',
       'jobCommand': '职位推荐',
-      'screen': '筛选'
+      'screen': '筛选',
+      'addFriends': '加为好友'
     },
   };
 
@@ -74,6 +76,8 @@ class LinkedInLocalizations {
   String get jobCommand => _localizedValues[locale.languageCode]['jobCommand'];
 
   String get screen => _localizedValues[locale.languageCode]['screen'];
+
+  String get addFriends => _localizedValues[locale.languageCode]['addFriends'];
 }
 
 class LinkedInLocalizationsDelegate extends LocalizationsDelegate<LinkedInLocalizations> {
