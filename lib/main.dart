@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       onGenerateTitle: (BuildContext context) =>
           LinkedInLocalizations.of(context).title,
       theme: new ThemeData(
-        primaryColor: const Color(_bluePrimaryValue), 
+        primaryColor: const Color(_bluePrimaryValue),
         dividerColor: const Color(0x00000000),
-        backgroundColor: Colors.grey
+        backgroundColor: Colors.grey,
       ),
       home: new MyTabHomePage(),
       debugShowCheckedModeBanner: false,
